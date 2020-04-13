@@ -1,20 +1,36 @@
-﻿#include <iostream>
-#include "coordinates.h"
-
+﻿#include<iostream>
+#include"Point.h"
 using namespace std;
 
-void input(float &x, float &y, float &z)
+//+, -, =, ==, !==, <<
+
+void SetCoord(float& x, float& y, float& z)
 {
-	cin >> x;
-	cin >> y;
-	cin >> z;
+		cout << "\tx = ";		cin >> x;
+		cout << "\ty = ";		cin >> y;
+		cout << "\tz = ";		cin >> z;
 }
 
 int main()
 {
-	float x, y, z;
-	input(x, y, z);
-	coordinates point(x, y, z);
-	//point.print();
-	point 3 = point1 + point2;
+	setlocale(LC_ALL, "Russian");
+
+	float x;
+	float y;
+	float z;
+
+	cout << "enter 1st coordinates" << endl;
+	SetCoord(x, y, z);
+	Point FirstPoint(x, y, z);
+
+
+	cout << "enter 2nd coordinates" << endl;
+	SetCoord(x, y, z);
+	Point SecondPoint(x, y, z);
+
+
+	Point ThirdPoint;
+	ThirdPoint = FirstPoint + SecondPoint;
+
+	cout << ThirdPoint;
 }
