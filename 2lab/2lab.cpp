@@ -1,5 +1,7 @@
-﻿#include<iostream>
-#include"Point.h"
+﻿#include <iostream>
+#include "Point.h"
+#include <string>
+
 using namespace std;
 
 //+, -, =, ==, !==, <<
@@ -30,7 +32,35 @@ int main()
 
 
 	Point ThirdPoint;
-	ThirdPoint = FirstPoint + SecondPoint;
+	string input;
+	cout << "enter the operator" << endl;
+	cin >> input;
 
-	cout << ThirdPoint;
+	if (input == "+") {
+		ThirdPoint = FirstPoint + SecondPoint;
+		cout << ThirdPoint;
+	}
+
+	if (input == "=") {
+		FirstPoint = SecondPoint;
+		cout << FirstPoint;
+	}
+
+	if (input == "-") {
+		ThirdPoint = FirstPoint - SecondPoint;
+		cout << ThirdPoint;
+	}
+
+	if (input == "==") {
+		if (FirstPoint == SecondPoint)
+			cout << "equally";
+		else  cout << "not equally";
+	}
+
+	if (input == "!=") {
+		if (FirstPoint != SecondPoint)
+			cout << "not equally";
+		else  cout << "equally";
+	}
+
 }
